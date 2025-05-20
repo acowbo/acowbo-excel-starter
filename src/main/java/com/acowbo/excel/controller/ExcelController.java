@@ -41,7 +41,7 @@ public class ExcelController {
         @ExcelColumn(value = "手机号", validationType = ExcelColumn.ValidationType.PHONE)
         private String phone;
 
-        @ExcelColumn(value = "邮箱", validationType = ExcelColumn.ValidationType.EMAIL)
+        @ExcelColumn(value = "邮箱")
         private String email;
 
         @ExcelColumn(value = "身份证号", validationType = ExcelColumn.ValidationType.ID_CARD)

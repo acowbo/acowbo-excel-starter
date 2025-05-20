@@ -69,10 +69,6 @@ public @interface ExcelColumn {
          */
         BANK_CARD("bankCard"),
         /**
-         * 邮箱校验
-         */
-        EMAIL("email"),
-        /**
          * 数字校验
          */
         NUMBER("number");

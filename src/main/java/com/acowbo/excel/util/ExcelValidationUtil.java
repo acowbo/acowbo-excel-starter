@@ -1,7 +1,10 @@
 package com.acowbo.excel.util;
 
 import com.acowbo.excel.config.ExcelTemplateConfig;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.DataValidation;
+import org.apache.poi.ss.usermodel.DataValidationConstraint;
+import org.apache.poi.ss.usermodel.DataValidationHelper;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddressList;
 
 import java.util.Map;
@@ -44,10 +47,6 @@ public class ExcelValidationUtil {
             case "bankCard":
                 constraint = helper.createTextLengthConstraint(DataValidationConstraint.OperatorType.BETWEEN, "16", "19");
                 addValidationWithStyle(helper, sheet, colIndex, constraint, title, "请输入16-19位银行卡号", config);
-                break;
-            case "email":
-                constraint = helper.createCustomConstraint("ISEMAIL()");
-                addValidationWithStyle(helper, sheet, colIndex, constraint, title, "请输入正确的邮箱地址", config);
                 break;
             case "number":
                 constraint = helper.createNumericConstraint(
